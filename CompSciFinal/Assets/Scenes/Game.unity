@@ -123,6 +123,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &306220712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 306220714}
+  - component: {fileID: 306220713}
+  m_Layer: 0
+  m_Name: ChartLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &306220713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306220712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7575d4be1bc66124cbf274b04ae5a80b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  songIndex: 1
+  diffIndex: 2
+--- !u!4 &306220714
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306220712}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.17302933, y: 0.4131346, z: 64.24813}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,11 +538,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 942011171}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7575d4be1bc66124cbf274b04ae5a80b, type: 3}
+  m_Script: {fileID: 11500000, guid: 19f53838d2a601a4fbbb75a20d089e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 942011174}
-  freedomDive: {fileID: 8300000, guid: ba2068e34192a7c4fb1cfb0560b7f5ba, type: 3}
+  songs:
+  - {fileID: 8300000, guid: 068345a7526aa3e4aa6b5363be5fca84, type: 3}
+  - {fileID: 8300000, guid: f52a9b322a8291a429dad7fb2c75266a, type: 3}
+  - {fileID: 8300000, guid: ba2068e34192a7c4fb1cfb0560b7f5ba, type: 3}
+  - {fileID: 8300000, guid: b0613e18e866f204b90aa938f24e3b8c, type: 3}
+  - {fileID: 8300000, guid: 06655c4668aa90b4bb8c4712b1c644e8, type: 3}
+  - {fileID: 8300000, guid: a2ebe6fd6034285468d9c5685cebb1f0, type: 3}
+  chartLoader: {fileID: 306220713}
 --- !u!4 &942011173
 Transform:
   m_ObjectHideFlags: 0
