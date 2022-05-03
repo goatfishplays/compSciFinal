@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class Triggering : MonoBehaviour
 {
     private Inputs inputs;
-    [SerializeField] private float fallSpeed = 5f;
+    [SerializeField] public float fallSpeed = 5f;
     [SerializeField] private Color offColor = new Color(64, 128, 64);
     [SerializeField] private Color onColor = new Color(64, 255, 64);
 
@@ -14,24 +14,28 @@ public class Triggering : MonoBehaviour
 
     [SerializeField] private Collider2D k1Cd;
     [SerializeField] private SpriteRenderer sR1;
+    public GameObject note0;
     private Collider2D[] k1Trigs = new Collider2D[10];
     private bool k1;
     private bool lastK1;
 
     [SerializeField] private Collider2D k2Cd;
     [SerializeField] private SpriteRenderer sR2;
+    public GameObject note1;
     private Collider2D[] k2Trigs = new Collider2D[10];
     private bool k2;
     private bool lastK2;
 
     [SerializeField] private Collider2D k3Cd;
     [SerializeField] private SpriteRenderer sR3;
+    public GameObject note2;
     private Collider2D[] k3Trigs = new Collider2D[10];
     private bool k3;
     private bool lastK3;
 
     [SerializeField] private Collider2D k4Cd;
     [SerializeField] private SpriteRenderer sR4;
+    public GameObject note3;
     private Collider2D[] k4Trigs = new Collider2D[10];
     private bool k4;
     private bool lastK4;
@@ -67,7 +71,8 @@ public class Triggering : MonoBehaviour
             {
                 Collider2D downest = getDownest(k1Trigs, k1Cd.GetContacts(k1Trigs));
                 Debug.Log(1 - Mathf.Abs(downest.transform.localPosition.y));
-                downest.transform.localPosition = new Vector2(0, Random.Range(10, 15));
+                // downest.transform.localPosition = new Vector2(0, Random.Range(10, 15));
+                Destroy(downest.gameObject);
                 downest.attachedRigidbody.velocity = new Vector2(0, -1 * fallSpeed);
             }
             else
@@ -93,7 +98,8 @@ public class Triggering : MonoBehaviour
             {
                 Collider2D downest = getDownest(k2Trigs, k2Cd.GetContacts(k2Trigs));
                 Debug.Log(1 - Mathf.Abs(downest.transform.localPosition.y));
-                downest.transform.localPosition = new Vector2(0, Random.Range(10, 15));
+                // downest.transform.localPosition = new Vector2(0, Random.Range(10, 15));
+                Destroy(downest.gameObject);
                 downest.attachedRigidbody.velocity = new Vector2(0, -1 * fallSpeed);
             }
             else
@@ -119,7 +125,8 @@ public class Triggering : MonoBehaviour
             {
                 Collider2D downest = getDownest(k3Trigs, k3Cd.GetContacts(k3Trigs));
                 Debug.Log(1 - Mathf.Abs(downest.transform.localPosition.y));
-                downest.transform.localPosition = new Vector2(0, Random.Range(10, 15));
+                // downest.transform.localPosition = new Vector2(0, Random.Range(10, 15));
+                Destroy(downest.gameObject);
                 downest.attachedRigidbody.velocity = new Vector2(0, -1 * fallSpeed);
             }
             else
@@ -145,7 +152,8 @@ public class Triggering : MonoBehaviour
             {
                 Collider2D downest = getDownest(k4Trigs, k4Cd.GetContacts(k4Trigs));
                 Debug.Log(1 - Mathf.Abs(downest.transform.localPosition.y));
-                downest.transform.localPosition = new Vector2(0, Random.Range(10, 15));
+                // downest.transform.localPosition = new Vector2(0, Random.Range(10, 15));
+                Destroy(downest.gameObject);
                 downest.attachedRigidbody.velocity = new Vector2(0, -1 * fallSpeed);
             }
             else

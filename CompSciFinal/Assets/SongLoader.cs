@@ -6,7 +6,9 @@ using OsuLoader;
 public class SongLoader : MonoBehaviour
 {
     public AudioSource audio;
-    public AudioClip[] songs = new AudioClip[6];
+    public AudioClip[] songs = new AudioClip[7];
+    public GameObject background;
+    public Sprite[] backgrounds = new Sprite[7];
 
     public ChartLoader chartLoader;
 
@@ -17,5 +19,8 @@ public class SongLoader : MonoBehaviour
         // Plays song according to song index
         audio.clip = songs[chartLoader.songIndex];
         audio.Play();
+
+        SpriteRenderer spriteRenderer = background.GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = backgrounds[chartLoader.songIndex];
     }
 }

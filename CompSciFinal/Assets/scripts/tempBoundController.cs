@@ -19,11 +19,12 @@ public class tempBoundController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(tf.localPosition.y < -1.5f)
         {
-            tf.localPosition = new Vector2(0, Random.Range(10, 15));
+            // tf.localPosition = new Vector2(0, Random.Range(10, 15));
+            Destroy(this);
             Debug.Log("Miss");
         }
     }
