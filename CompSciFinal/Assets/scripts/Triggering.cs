@@ -18,6 +18,7 @@ public class Triggering : MonoBehaviour
     private Collider2D[] k1Trigs = new Collider2D[10];
     private bool k1;
     private bool lastK1;
+    private bool holdingK1 = false;
 
     [SerializeField] private Collider2D k2Cd;
     [SerializeField] private SpriteRenderer sR2;
@@ -25,6 +26,7 @@ public class Triggering : MonoBehaviour
     private Collider2D[] k2Trigs = new Collider2D[10];
     private bool k2;
     private bool lastK2;
+    private bool holdingK2 = false;
 
     [SerializeField] private Collider2D k3Cd;
     [SerializeField] private SpriteRenderer sR3;
@@ -32,6 +34,7 @@ public class Triggering : MonoBehaviour
     private Collider2D[] k3Trigs = new Collider2D[10];
     private bool k3;
     private bool lastK3;
+    private bool holdingK3 = false;
 
     [SerializeField] private Collider2D k4Cd;
     [SerializeField] private SpriteRenderer sR4;
@@ -39,6 +42,7 @@ public class Triggering : MonoBehaviour
     private Collider2D[] k4Trigs = new Collider2D[10];
     private bool k4;
     private bool lastK4;
+    private bool holdingK4 = false;
 
     private int misclicks = 0;
     
@@ -72,8 +76,18 @@ public class Triggering : MonoBehaviour
                 Collider2D downest = getDownest(k1Trigs, k1Cd.GetContacts(k1Trigs));
                 Debug.Log(1 - Mathf.Abs(downest.transform.localPosition.y));
                 // downest.transform.localPosition = new Vector2(0, Random.Range(10, 15));
-                Destroy(downest.gameObject);
-                downest.attachedRigidbody.velocity = new Vector2(0, -1 * fallSpeed);
+                if(downest.GetComponent<tempBoundController>() != null)
+                {
+                    tempBoundController longDet = downest.GetComponent<tempBoundController>();
+                    if (!longDet.isLong())
+                    {
+                        Destroy(downest.gameObject);
+                    }
+                    else
+                    {
+                        holdingK1 = true;
+                    }
+                }
             }
             else
             {
@@ -81,6 +95,16 @@ public class Triggering : MonoBehaviour
                 Debug.Log("Misclicks" + misclicks);
             }
         }
+        if(holdingK1 && !k1 && lastK1)
+        {
+            holdingK1 = false;
+            Collider2D downest = getDownest(k1Trigs, k1Cd.GetContacts(k1Trigs));
+            //when actually getitng the values we need to get a filter for if the value is <0 we count as a miss
+            Debug.Log(1 - Mathf.Abs(downest.transform.parent.localPosition.y + downest.transform.localPosition.y));
+            Destroy(downest.gameObject);
+
+        }
+
 
         if (inputs.buttonThings.Key2.ReadValue<float>() != 0)
         {
@@ -98,9 +122,19 @@ public class Triggering : MonoBehaviour
             {
                 Collider2D downest = getDownest(k2Trigs, k2Cd.GetContacts(k2Trigs));
                 Debug.Log(1 - Mathf.Abs(downest.transform.localPosition.y));
-                // downest.transform.localPosition = new Vector2(0, Random.Range(10, 15));
-                Destroy(downest.gameObject);
-                downest.attachedRigidbody.velocity = new Vector2(0, -1 * fallSpeed);
+                // downest.transform.localPosition = new Vector2(0, Random.Range(20, 25));
+                if (downest.GetComponent<tempBoundController>() != null)
+                {
+                    tempBoundController longDet = downest.GetComponent<tempBoundController>();
+                    if (!longDet.isLong())
+                    {
+                        Destroy(downest.gameObject);
+                    }
+                    else
+                    {
+                        holdingK2 = true;
+                    }
+                }
             }
             else
             {
@@ -108,6 +142,17 @@ public class Triggering : MonoBehaviour
                 Debug.Log("Misclicks" + misclicks);
             }
         }
+        if (holdingK2 && !k2 && lastK2)
+        {
+            holdingK2 = false;
+            Collider2D downest = getDownest(k2Trigs, k2Cd.GetContacts(k2Trigs));
+            //when actually getitng the values we need to get a filter for if the value is <0 we count as a miss
+            Debug.Log(1 - Mathf.Abs(downest.transform.parent.localPosition.y + downest.transform.localPosition.y));
+            Destroy(downest.gameObject);
+
+        }
+
+
 
         if (inputs.buttonThings.Key3.ReadValue<float>() != 0)
         {
@@ -125,9 +170,19 @@ public class Triggering : MonoBehaviour
             {
                 Collider2D downest = getDownest(k3Trigs, k3Cd.GetContacts(k3Trigs));
                 Debug.Log(1 - Mathf.Abs(downest.transform.localPosition.y));
-                // downest.transform.localPosition = new Vector2(0, Random.Range(10, 15));
-                Destroy(downest.gameObject);
-                downest.attachedRigidbody.velocity = new Vector2(0, -1 * fallSpeed);
+                // downest.transform.localPosition = new Vector2(0, Random.Range(30, 35));
+                if (downest.GetComponent<tempBoundController>() != null)
+                {
+                    tempBoundController longDet = downest.GetComponent<tempBoundController>();
+                    if (!longDet.isLong())
+                    {
+                        Destroy(downest.gameObject);
+                    }
+                    else
+                    {
+                        holdingK3 = true;
+                    }
+                }
             }
             else
             {
@@ -135,6 +190,17 @@ public class Triggering : MonoBehaviour
                 Debug.Log("Misclicks" + misclicks);
             }
         }
+        if (holdingK3 && !k3 && lastK3)
+        {
+            holdingK3 = false;
+            Collider2D downest = getDownest(k3Trigs, k3Cd.GetContacts(k3Trigs));
+            //when actually getitng the values we need to get a filter for if the value is <0 we count as a miss
+            Debug.Log(1 - Mathf.Abs(downest.transform.parent.localPosition.y + downest.transform.localPosition.y));
+            Destroy(downest.gameObject);
+
+        }
+
+
 
         if (inputs.buttonThings.Key4.ReadValue<float>() != 0)
         {
@@ -152,15 +218,34 @@ public class Triggering : MonoBehaviour
             {
                 Collider2D downest = getDownest(k4Trigs, k4Cd.GetContacts(k4Trigs));
                 Debug.Log(1 - Mathf.Abs(downest.transform.localPosition.y));
-                // downest.transform.localPosition = new Vector2(0, Random.Range(10, 15));
-                Destroy(downest.gameObject);
-                downest.attachedRigidbody.velocity = new Vector2(0, -1 * fallSpeed);
+                // downest.transform.localPosition = new Vector2(0, Random.Range(40, 45));
+                if (downest.GetComponent<tempBoundController>() != null)
+                {
+                    tempBoundController longDet = downest.GetComponent<tempBoundController>();
+                    if (!longDet.isLong())
+                    {
+                        Destroy(downest.gameObject);
+                    }
+                    else
+                    {
+                        holdingK4 = true;
+                    }
+                }
             }
             else
             {
                 misclicks++;
                 Debug.Log("Misclicks" + misclicks);
             }
+        }
+        if (holdingK4 && !k4 && lastK4)
+        {
+            holdingK4 = false;
+            Collider2D downest = getDownest(k4Trigs, k4Cd.GetContacts(k4Trigs));
+            //when actually getitng the values we need to get a filter for if the value is <0 we count as a miss
+            Debug.Log(1 - Mathf.Abs(downest.transform.parent.localPosition.y + downest.transform.localPosition.y));
+            Destroy(downest.gameObject);
+
         }
 
 

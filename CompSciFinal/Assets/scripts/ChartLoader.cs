@@ -73,7 +73,7 @@ public class ChartLoader : MonoBehaviour
         }
 
         // Sets a path for all .osu files for 1 song
-        string path = "/Unity Stuff/OSU MAPS/" + song;
+        string path = System.IO.Directory.GetCurrentDirectory().Replace("CompSciFinal", "osuMaps\\") + song;
         string[] files = System.IO.Directory.GetFiles(path, "*.osu");
         // Puts difficulty names into an array
         string[] difficulties = new string[files.Length];
