@@ -10,12 +10,17 @@ public class ChartLoader : MonoBehaviour
     Triggering triggering;
     public GameObject clickManager;
     public GameObject note0Prefab;
+    public GameObject lNote0Prefab;
+    public GameObject lNote0End;
     public GameObject note0Parent;
     public GameObject note1Prefab;
+    public GameObject lNote1Prefab;
     public GameObject note1Parent;
     public GameObject note2Prefab;
+    public GameObject lNote2Prefab;
     public GameObject note2Parent;
     public GameObject note3Prefab;
+    public GameObject lNote3Prefab;
     public GameObject note3Parent;
     private BeatMap beatMap;
     private int tick = 0;
@@ -37,7 +42,11 @@ public class ChartLoader : MonoBehaviour
 
         foreach (Note note in beatMap.SingleNotes)
         {
-            SpawnNote(note);
+            SpawnSingleNote(note);
+        }
+        foreach (LongNote longNote in beatMap.LongNotes)
+        {
+            SpawnLongNote(longNote);
         }
     }
 
@@ -105,10 +114,10 @@ public class ChartLoader : MonoBehaviour
         
         Debug.Log(beatMap.SingleNotes.Count);
         Debug.Log(files[diffIndex]);
-        Debug.Log(beatMap.SingleNotes[1].Column);
+        Debug.Log(beatMap.LongNotes[0].Column);
     }
 
-    private void SpawnNote(Note note)
+    private void SpawnSingleNote(Note note)
     {
         int column = note.Column;
         float time = note.Time;
@@ -165,6 +174,90 @@ public class ChartLoader : MonoBehaviour
                 n3.transform.localScale = new Vector3(1, 1, 1);
                 n3.transform.localPosition = new Vector2(0, y);
                 rigidbody3.velocity = new Vector2(0, -fallSpeed);
+                break;
+        }
+    }
+
+    private void SpawnLongNote (LongNote longNote)
+    {
+        int column = longNote.Column;
+        float startTime = longNote.StartTime;
+        float endTime = longNote.EndTime;
+        float fallSpeed = triggering.fallSpeed;
+
+        float yStart = fallSpeed * startTime / 1000;
+        float yEnd = fallSpeed * endTime / 1000;
+        float yRealEnd = yEnd - yStart;
+
+        switch (column)
+        {
+            case 0:
+                Transform transformParent0 = note0Parent.GetComponent<Transform>();
+                // Transform transformChild0 = lNote0Prefab.GetComponentInChildren<Transform>();
+
+                GameObject lN0 = Instantiate(lNote0Prefab) as GameObject;
+                lN0.transform.parent = transformParent0;
+                Rigidbody2D rigidbody0 = lN0.GetComponent<Rigidbody2D>();
+
+                lN0.transform.localScale = new Vector3(1, 1, 1);
+                lN0.transform.localPosition = new Vector2(0, yStart);
+                // transformChild0.localPosition = new Vector2(0, yEnd);
+                lN0.GetComponentInChildren<Transform>().localPosition = new Vector2(0, yRealEnd);
+                rigidbody0.velocity = new Vector2(0, -fallSpeed);
+                Debug.Log("Start: " + yStart);
+                Debug.Log("Start+10: " + yStart + 10);
+                Debug.Log("End: " + yEnd);
+                break;
+            case 1:
+                Transform transformParent1 = note1Parent.GetComponent<Transform>();
+                // Transform transformChild0 = lNote0Prefab.GetComponentInChildren<Transform>();
+
+                GameObject lN1 = Instantiate(lNote1Prefab) as GameObject;
+                lN1.transform.parent = transformParent1;
+                Rigidbody2D rigidbody1 = lN1.GetComponent<Rigidbody2D>();
+
+                lN1.transform.localScale = new Vector3(1, 1, 1);
+                lN1.transform.localPosition = new Vector2(0, yStart);
+                // transformChild0.localPosition = new Vector2(0, yEnd);
+                lN1.GetComponentInChildren<Transform>().localPosition = new Vector2(0, yRealEnd);
+                rigidbody1.velocity = new Vector2(0, -fallSpeed);
+                Debug.Log("Start: " + yStart);
+                Debug.Log("Start+10: " + yStart + 10);
+                Debug.Log("End: " + yEnd);
+                break;
+            case 2:
+                Transform transformParent2 = note2Parent.GetComponent<Transform>();
+                // Transform transformChild0 = lNote0Prefab.GetComponentInChildren<Transform>();
+
+                GameObject lN2 = Instantiate(lNote2Prefab) as GameObject;
+                lN2.transform.parent = transformParent2;
+                Rigidbody2D rigidbody2 = lN2.GetComponent<Rigidbody2D>();
+
+                lN2.transform.localScale = new Vector3(1, 1, 1);
+                lN2.transform.localPosition = new Vector2(0, yStart);
+                // transformChild0.localPosition = new Vector2(0, yEnd);
+                lN2.GetComponentInChildren<Transform>().localPosition = new Vector2(0, yRealEnd);
+                rigidbody2.velocity = new Vector2(0, -fallSpeed);
+                Debug.Log("Start: " + yStart);
+                Debug.Log("Start+10: " + yStart + 10);
+                Debug.Log("End: " + yEnd);
+                break;
+            case 3:
+                Transform transformParent3 = note3Parent.GetComponent<Transform>();
+                // Transform transformChild0 = lNote0Prefab.GetComponentInChildren<Transform>();
+
+                GameObject lN3 = Instantiate(lNote0Prefab) as GameObject;
+                lN3.transform.parent = transformParent3;
+                Rigidbody2D rigidbody3 = lN3.GetComponent<Rigidbody2D>();
+
+                lN3.transform.localScale = new Vector3(1, 1, 1);
+                lN3.transform.localPosition = new Vector2(0, yStart);
+                // transformChild0.localPosition = new Vector2(0, yEnd);
+                lN3.GetComponentInChildren<Transform>().localPosition = new Vector2(0, yRealEnd);
+                rigidbody3.velocity = new Vector2(0, -fallSpeed);
+                Debug.Log("Start: " + yStart);
+                Debug.Log("Start+10: " + yStart + 10);
+                Debug.Log("End: " + yEnd);
                 break;
         }
     }
