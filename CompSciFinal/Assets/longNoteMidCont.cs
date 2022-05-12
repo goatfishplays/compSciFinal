@@ -5,7 +5,7 @@ using UnityEngine;
 public class longNoteMidCont : MonoBehaviour
 {
     [SerializeField] private Transform tf;
-    private void FixedUpdate()
+    private void Update()
     {
         tf = GetComponent<Transform>();
         tf.localScale = new Vector3(1, tf.parent.localPosition.y*.8f, 1);
