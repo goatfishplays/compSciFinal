@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7575d4be1bc66124cbf274b04ae5a80b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  songIndex: 4
+  songIndex: 1
   diffIndex: 1
   clickManager: {fileID: 2108383908}
   note0Prefab: {fileID: 1545590242162979690, guid: 8cbc546d95bf3984da7887c7abdd30ad, type: 3}

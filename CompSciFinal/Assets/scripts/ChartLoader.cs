@@ -202,11 +202,8 @@ public class ChartLoader : MonoBehaviour
                 lN0.transform.localScale = new Vector3(1, 1, 1);
                 lN0.transform.localPosition = new Vector2(0, yStart);
                 // transformChild0.localPosition = new Vector2(0, yEnd);
-                lN0.GetComponentInChildren<Transform>().localPosition = new Vector2(0, yRealEnd);
+                lN0.transform.GetChild(0).localPosition = new Vector2(0, yRealEnd);
                 rigidbody0.velocity = new Vector2(0, -fallSpeed);
-                Debug.Log("Start: " + yStart);
-                Debug.Log("Start+10: " + yStart + 10);
-                Debug.Log("End: " + yEnd);
                 break;
             case 1:
                 Transform transformParent1 = note1Parent.GetComponent<Transform>();
@@ -219,11 +216,8 @@ public class ChartLoader : MonoBehaviour
                 lN1.transform.localScale = new Vector3(1, 1, 1);
                 lN1.transform.localPosition = new Vector2(0, yStart);
                 // transformChild0.localPosition = new Vector2(0, yEnd);
-                lN1.GetComponentInChildren<Transform>().localPosition = new Vector2(0, yRealEnd);
+                lN1.transform.GetChild(0).localPosition = new Vector2(0, yRealEnd);
                 rigidbody1.velocity = new Vector2(0, -fallSpeed);
-                Debug.Log("Start: " + yStart);
-                Debug.Log("Start+10: " + yStart + 10);
-                Debug.Log("End: " + yEnd);
                 break;
             case 2:
                 Transform transformParent2 = note2Parent.GetComponent<Transform>();
@@ -236,11 +230,8 @@ public class ChartLoader : MonoBehaviour
                 lN2.transform.localScale = new Vector3(1, 1, 1);
                 lN2.transform.localPosition = new Vector2(0, yStart);
                 // transformChild0.localPosition = new Vector2(0, yEnd);
-                lN2.GetComponentInChildren<Transform>().localPosition = new Vector2(0, yRealEnd);
+                lN2.transform.GetChild(0).localPosition = new Vector2(0, yRealEnd);
                 rigidbody2.velocity = new Vector2(0, -fallSpeed);
-                Debug.Log("Start: " + yStart);
-                Debug.Log("Start+10: " + yStart + 10);
-                Debug.Log("End: " + yEnd);
                 break;
             case 3:
                 Transform transformParent3 = note3Parent.GetComponent<Transform>();
@@ -253,11 +244,8 @@ public class ChartLoader : MonoBehaviour
                 lN3.transform.localScale = new Vector3(1, 1, 1);
                 lN3.transform.localPosition = new Vector2(0, yStart);
                 // transformChild0.localPosition = new Vector2(0, yEnd);
-                lN3.GetComponentInChildren<Transform>().localPosition = new Vector2(0, yRealEnd);
+                lN3.transform.GetChild(0).localPosition = new Vector2(0, yRealEnd);
                 rigidbody3.velocity = new Vector2(0, -fallSpeed);
-                Debug.Log("Start: " + yStart);
-                Debug.Log("Start+10: " + yStart + 10);
-                Debug.Log("End: " + yEnd);
                 break;
         }
     }
