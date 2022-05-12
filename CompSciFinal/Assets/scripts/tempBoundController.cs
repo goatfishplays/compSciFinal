@@ -29,18 +29,30 @@ public class tempBoundController : MonoBehaviour
             // tf.localPosition = new Vector2(0, Random.Range(10, 15));
             Destroy(this.gameObject);
             misses++;
+            Triggering.combo = 0;
             Debug.Log("Miss " + misses);
         }
         else if(lNote && tf.localPosition.y < -.6f)
         {
             Destroy(this);
             misses++;
+            Triggering.combo = 0;
             Debug.Log("Miss " + misses);
         }
-        else if(lTNote && tf.localPosition.y < -.25f)
+        else if(lTNote && tf.localPosition.y < 0f)
+        {
+            Destroy(tf.gameObject.GetComponent<SpriteRenderer>());
+            Destroy(tf.GetChild(0).GetComponent<SpriteRenderer>());
+            if(lTNote && tf.localPosition.y < -1.25f)
+            {
+                Destroy(tf.parent.gameObject);
+            }
+        }
+        else if(lTNote && tf.localPosition.y < -1.25f)
         {
             Destroy(tf.parent.gameObject);
             misses++;
+            Triggering.combo = 0;
             Debug.Log("Miss " + misses);
             
         }

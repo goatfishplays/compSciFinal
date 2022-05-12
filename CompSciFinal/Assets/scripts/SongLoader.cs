@@ -18,9 +18,17 @@ public class SongLoader : MonoBehaviour
         audio = gameObject.GetComponent<AudioSource>();
         // Plays song according to song index
         audio.clip = songs[chartLoader.songIndex];
-        audio.Play();
+        StartCoroutine(WaitBeforePlay());
+        // audio.Play();
 
         SpriteRenderer spriteRenderer = background.GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = backgrounds[chartLoader.songIndex];
+    }
+
+    private IEnumerator WaitBeforePlay()
+    {
+        yield return new WaitForSeconds(ChartLoader.playDelay);
+
+        audio.Play();
     }
 }

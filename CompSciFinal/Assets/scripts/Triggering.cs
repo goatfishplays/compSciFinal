@@ -45,7 +45,8 @@ public class Triggering : MonoBehaviour
     private bool lastK4;
     private bool holdingK4 = false;
 
-    private int misclicks = 0;
+    public static int combo = 0;
+    public static int misclicks = 0;
     
 
     private void Awake()
@@ -79,6 +80,7 @@ public class Triggering : MonoBehaviour
                 if (downest.GetComponent<tempBoundController>() != null && !downest.GetComponent<tempBoundController>().isTopLong())
                 {
                     Debug.Log(1 - Mathf.Abs(downest.transform.localPosition.y));
+                    combo++;
                     tempBoundController longDet = downest.GetComponent<tempBoundController>();
                     if (!longDet.isLong())
                     {
@@ -145,6 +147,7 @@ public class Triggering : MonoBehaviour
                 if (downest.GetComponent<tempBoundController>() != null && !downest.GetComponent<tempBoundController>().isTopLong())
                 {
                     Debug.Log(1 - Mathf.Abs(downest.transform.localPosition.y));
+                    combo++;
                     tempBoundController longDet = downest.GetComponent<tempBoundController>();
                     if (!longDet.isLong())
                     {
@@ -212,6 +215,7 @@ public class Triggering : MonoBehaviour
                 if (downest.GetComponent<tempBoundController>() != null && !downest.GetComponent<tempBoundController>().isTopLong())
                 {
                     Debug.Log(1 - Mathf.Abs(downest.transform.localPosition.y));
+                    combo++;
                     tempBoundController longDet = downest.GetComponent<tempBoundController>();
                     if (!longDet.isLong())
                     {
@@ -279,6 +283,7 @@ public class Triggering : MonoBehaviour
                 if (downest.GetComponent<tempBoundController>() != null && !downest.GetComponent<tempBoundController>().isTopLong())
                 {
                     Debug.Log(1 - Mathf.Abs(downest.transform.localPosition.y));
+                    combo++;
                     tempBoundController longDet = downest.GetComponent<tempBoundController>();
                     if (!longDet.isLong())
                     {
