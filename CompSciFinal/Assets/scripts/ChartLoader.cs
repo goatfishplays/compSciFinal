@@ -26,6 +26,7 @@ public class ChartLoader : MonoBehaviour
     private int tick = 0;
 
     public static float playDelay = 3f;
+    public static float songOffset;
 
     private void Awake()
     {
@@ -58,25 +59,31 @@ public class ChartLoader : MonoBehaviour
         switch (songIndex)
         {
             case 0:
-                song = "466946 t+pazolite - Call me it (500 Tortures)";
+                song = "306191 Masayoshi Minoshima ft nomico - Bad apple";
                 break;
             case 1:
-                song = "476221 t+pazolite - CENSORED!!";
+                song = "466946 t+pazolite - Call me it (500 Tortures)";
                 break;
             case 2:
-                song = "173612 xi - FREEDOM DiVE";
+                song = "476221 t+pazolite - CENSORED!!";
                 break;
             case 3:
-                song = "639647 Camellia - GHOST";
+                song = "173612 xi - FREEDOM DiVE";
                 break;
             case 4:
-                song = "1224617 Kobaryo - Invisible Frenzy";
+                song = "639647 Camellia - GHOST";
                 break;
             case 5:
-                song = "484327 t+pazolite - Pumpin' Junkies";
+                song = "1224617 Kobaryo - Invisible Frenzy";
                 break;
             case 6:
+                song = "484327 t+pazolite - Pumpin' Junkies";
+                break;
+            case 7:
                 song = "523735 Kurokotei - Scattered Faith";
+                break;
+            case 8:
+                song = "915764 Kobaryo - Villain Virus [feat Camellia]";
                 break;
             default:
                 Debug.Log("songIndex is higher than number of songs");
@@ -111,6 +118,7 @@ public class ChartLoader : MonoBehaviour
         if (diffIndex <= difficulties.Length)
         {
             beatMap = bms[diffIndex];
+            songOffset = beatMap.AudioLeadIn;
         }
 
         

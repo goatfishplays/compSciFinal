@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7575d4be1bc66124cbf274b04ae5a80b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  songIndex: 1
+  songIndex: 8
   diffIndex: 1
   clickManager: {fileID: 2108383908}
   note0Prefab: {fileID: 1545590242162979690, guid: 8cbc546d95bf3984da7887c7abdd30ad, type: 3}
@@ -418,6 +418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audio: {fileID: 942011174}
   songs:
+  - {fileID: 8300000, guid: f56786b3ef0111c419b63d4e765a36fc, type: 3}
   - {fileID: 8300000, guid: 068345a7526aa3e4aa6b5363be5fca84, type: 3}
   - {fileID: 8300000, guid: f52a9b322a8291a429dad7fb2c75266a, type: 3}
   - {fileID: 8300000, guid: ba2068e34192a7c4fb1cfb0560b7f5ba, type: 3}
@@ -425,8 +426,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 06655c4668aa90b4bb8c4712b1c644e8, type: 3}
   - {fileID: 8300000, guid: a2ebe6fd6034285468d9c5685cebb1f0, type: 3}
   - {fileID: 8300000, guid: 4536e343f4e56134d8b149e3220e94db, type: 3}
+  - {fileID: 8300000, guid: 57e3072339649034f90b9cf865aca350, type: 3}
   background: {fileID: 721443892}
   backgrounds:
+  - {fileID: 21300000, guid: e2382b532aa36364d90f48c8d4ae8d82, type: 3}
   - {fileID: 21300000, guid: a90209ea29d9e4d44b1539cf2d987d16, type: 3}
   - {fileID: 21300000, guid: 87328b91b1309604ea55a3eafa705fea, type: 3}
   - {fileID: 21300000, guid: ceee06cd95d543d429fc003575b9fcb3, type: 3}
@@ -434,6 +437,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dbf6e6278914f0e4983073afc9958bab, type: 3}
   - {fileID: 21300000, guid: 94f843b46863bc440985227d17261790, type: 3}
   - {fileID: 21300000, guid: 2c66feb3149db61488c133449d4a6e26, type: 3}
+  - {fileID: 21300000, guid: 6462959f4b2fd0c45ac0b94a277fc7ea, type: 3}
   chartLoader: {fileID: 306220713}
 --- !u!4 &942011173
 Transform:
@@ -563,7 +567,7 @@ GameObject:
   - component: {fileID: 1311269978}
   - component: {fileID: 1311269977}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Combo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

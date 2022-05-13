@@ -6,9 +6,9 @@ using OsuLoader;
 public class SongLoader : MonoBehaviour
 {
     public AudioSource audio;
-    public AudioClip[] songs = new AudioClip[7];
+    public AudioClip[] songs = new AudioClip[9];
     public GameObject background;
-    public Sprite[] backgrounds = new Sprite[7];
+    public Sprite[] backgrounds = new Sprite[9];
 
     public ChartLoader chartLoader;
 
@@ -27,7 +27,7 @@ public class SongLoader : MonoBehaviour
 
     private IEnumerator WaitBeforePlay()
     {
-        yield return new WaitForSeconds(ChartLoader.playDelay);
+        yield return new WaitForSeconds(ChartLoader.playDelay + ChartLoader.songOffset);
 
         audio.Play();
     }
