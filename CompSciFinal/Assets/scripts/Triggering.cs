@@ -47,7 +47,9 @@ public class Triggering : MonoBehaviour
 
     public static int combo = 0;
     public static int misclicks = 0;
-    
+    public static int score = 0;
+    public static int fullScore = 0;
+    public static int judgement = 0;
 
     private void Awake()
     {
@@ -80,7 +82,43 @@ public class Triggering : MonoBehaviour
                 if (downest.GetComponent<tempBoundController>() != null && !downest.GetComponent<tempBoundController>().isTopLong())
                 {
                     Debug.Log(1 - Mathf.Abs(downest.transform.localPosition.y));
-                    combo++;
+                    if(1 - Mathf.Abs(downest.transform.localPosition.y) < 0.1f)
+                    {
+                        score += 0;
+                        judgement = 0;
+                        combo = 0;
+                    }
+                    else if (1 - Mathf.Abs(downest.transform.localPosition.y) < 0.15f)
+                    {
+                        score += 50;
+                        judgement = 1;
+                        combo++;
+                    }
+                    else if (1 - Mathf.Abs(downest.transform.localPosition.y) < 0.25f)
+                    {
+                        score += 100;
+                        judgement = 2;
+                        combo++;
+                    }
+                    else if (1 - Mathf.Abs(downest.transform.localPosition.y) < 0.5f)
+                    {
+                        score += 200;
+                        judgement = 3;
+                        combo++;
+                    }
+                    else if (1 - Mathf.Abs(downest.transform.localPosition.y) < 0.75f)
+                    {
+                        score += 300;
+                        judgement = 4;
+                        combo++;
+                    }
+                    else
+                    {
+                        score += 300;
+                        judgement = 5;
+                        combo++;
+                    }
+                    fullScore += 300;
                     tempBoundController longDet = downest.GetComponent<tempBoundController>();
                     if (!longDet.isLong())
                     {
@@ -102,7 +140,7 @@ public class Triggering : MonoBehaviour
             else
             {
                 misclicks++;
-                Debug.Log("Misclicks" + misclicks);
+                // Debug.Log("Misclicks" + misclicks);
             }
         }
         if (holdingK1 && getDownest(k1Trigs, k1Cd.GetContacts(k1Trigs)).transform.localPosition.y < -0.25)
@@ -147,7 +185,43 @@ public class Triggering : MonoBehaviour
                 if (downest.GetComponent<tempBoundController>() != null && !downest.GetComponent<tempBoundController>().isTopLong())
                 {
                     Debug.Log(1 - Mathf.Abs(downest.transform.localPosition.y));
-                    combo++;
+                    if (1 - Mathf.Abs(downest.transform.localPosition.y) < 0.1f)
+                    {
+                        score += 0;
+                        judgement = 0;
+                        combo = 0;
+                    }
+                    else if (1 - Mathf.Abs(downest.transform.localPosition.y) < 0.15f)
+                    {
+                        score += 50;
+                        judgement = 1;
+                        combo++;
+                    }
+                    else if (1 - Mathf.Abs(downest.transform.localPosition.y) < 0.25)
+                    {
+                        score += 100;
+                        judgement = 2;
+                        combo++;
+                    }
+                    else if (1 - Mathf.Abs(downest.transform.localPosition.y) < 0.5f)
+                    {
+                        score += 200;
+                        judgement = 3;
+                        combo++;
+                    }
+                    else if (1 - Mathf.Abs(downest.transform.localPosition.y) < 0.75f)
+                    {
+                        score += 300;
+                        judgement = 4;
+                        combo++;
+                    }
+                    else
+                    {
+                        score += 300;
+                        judgement = 5;
+                        combo++;
+                    }
+                    fullScore += 300;
                     tempBoundController longDet = downest.GetComponent<tempBoundController>();
                     if (!longDet.isLong())
                     {
@@ -169,7 +243,7 @@ public class Triggering : MonoBehaviour
             else
             {
                 misclicks++;
-                Debug.Log("Misclicks" + misclicks);
+                // Debug.Log("Misclicks" + misclicks);
             }
         }
         if (holdingK2 && getDownest(k2Trigs, k2Cd.GetContacts(k2Trigs)).transform.localPosition.y < -0.25)
@@ -215,7 +289,43 @@ public class Triggering : MonoBehaviour
                 if (downest.GetComponent<tempBoundController>() != null && !downest.GetComponent<tempBoundController>().isTopLong())
                 {
                     Debug.Log(1 - Mathf.Abs(downest.transform.localPosition.y));
-                    combo++;
+                    if (1 - Mathf.Abs(downest.transform.localPosition.y) < 0.1f)
+                    {
+                        score += 0;
+                        judgement = 0;
+                        combo = 0;
+                    }
+                    else if (1 - Mathf.Abs(downest.transform.localPosition.y) < 0.15f)
+                    {
+                        score += 50;
+                        judgement = 1;
+                        combo++;
+                    }
+                    else if (1 - Mathf.Abs(downest.transform.localPosition.y) < 0.25f)
+                    {
+                        score += 100;
+                        judgement = 2;
+                        combo++;
+                    }
+                    else if (1 - Mathf.Abs(downest.transform.localPosition.y) < 0.5f)
+                    {
+                        score += 200;
+                        judgement = 3;
+                        combo++;
+                    }
+                    else if (1 - Mathf.Abs(downest.transform.localPosition.y) < 0.75f)
+                    {
+                        score += 300;
+                        judgement = 4;
+                        combo++;
+                    }
+                    else
+                    {
+                        score += 300;
+                        judgement = 5;
+                        combo++;
+                    }
+                    fullScore += 300;
                     tempBoundController longDet = downest.GetComponent<tempBoundController>();
                     if (!longDet.isLong())
                     {
@@ -237,7 +347,7 @@ public class Triggering : MonoBehaviour
             else
             {
                 misclicks++;
-                Debug.Log("Misclicks" + misclicks);
+                // Debug.Log("Misclicks" + misclicks);
             }
         }
         if (holdingK3 && getDownest(k3Trigs, k3Cd.GetContacts(k3Trigs)).transform.localPosition.y < -0.25)
@@ -283,7 +393,43 @@ public class Triggering : MonoBehaviour
                 if (downest.GetComponent<tempBoundController>() != null && !downest.GetComponent<tempBoundController>().isTopLong())
                 {
                     Debug.Log(1 - Mathf.Abs(downest.transform.localPosition.y));
-                    combo++;
+                    if (1 - Mathf.Abs(downest.transform.localPosition.y) < 0.1f)
+                    {
+                        score += 0;
+                        judgement = 0;
+                        combo = 0;
+                    }
+                    else if (1 - Mathf.Abs(downest.transform.localPosition.y) < 0.15f)
+                    {
+                        score += 50;
+                        judgement = 1;
+                        combo++;
+                    }
+                    else if (1 - Mathf.Abs(downest.transform.localPosition.y) < 0.25f)
+                    {
+                        score += 100;
+                        judgement = 2;
+                        combo++;
+                    }
+                    else if (1 - Mathf.Abs(downest.transform.localPosition.y) < 0.5f)
+                    {
+                        score += 200;
+                        judgement = 3;
+                        combo++;
+                    }
+                    else if (1 - Mathf.Abs(downest.transform.localPosition.y) < 0.75f)
+                    {
+                        score += 300;
+                        judgement = 4;
+                        combo++;
+                    }
+                    else
+                    {
+                        score += 300;
+                        judgement = 5;
+                        combo++;
+                    }
+                    fullScore += 300;
                     tempBoundController longDet = downest.GetComponent<tempBoundController>();
                     if (!longDet.isLong())
                     {
@@ -305,7 +451,7 @@ public class Triggering : MonoBehaviour
             else
             {
                 misclicks++;
-                Debug.Log("Misclicks" + misclicks);
+                // Debug.Log("Misclicks" + misclicks);
             }
         }
         if(holdingK4 && getDownest(k4Trigs, k4Cd.GetContacts(k4Trigs)).transform.localPosition.y < -0.25)

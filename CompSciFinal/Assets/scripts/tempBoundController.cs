@@ -29,6 +29,7 @@ public class tempBoundController : MonoBehaviour
             // tf.localPosition = new Vector2(0, Random.Range(10, 15));
             Destroy(this.gameObject);
             misses++;
+            Triggering.fullScore += 300;
             Triggering.combo = 0;
             Debug.Log("Miss " + misses);
         }
@@ -36,6 +37,7 @@ public class tempBoundController : MonoBehaviour
         {
             Destroy(this);
             misses++;
+            Triggering.fullScore += 300;
             Triggering.combo = 0;
             Debug.Log("Miss " + misses);
         }
@@ -53,6 +55,7 @@ public class tempBoundController : MonoBehaviour
             Destroy(tf.parent.gameObject);
             misses++;
             Triggering.combo = 0;
+            Triggering.fullScore += 300;
             Debug.Log("Miss " + misses);
             
         }

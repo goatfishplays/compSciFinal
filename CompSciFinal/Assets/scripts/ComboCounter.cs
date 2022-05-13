@@ -15,6 +15,14 @@ public class ComboCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        comboCounter.text = Triggering.combo.ToString();
+        if (Triggering.combo > 0)
+        {
+            comboCounter.GetComponent<Text>().enabled = true;
+            comboCounter.text = Triggering.combo.ToString();
+        }
+        else
+        {
+            comboCounter.GetComponent<Text>().enabled = false;
+        }
     }
 }
