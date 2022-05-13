@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void StartGame()
+    public void ToSongSelect()
     {
-        SceneManager.LoadScene("Game");
+        
     }
 
     public void QuitGame()
