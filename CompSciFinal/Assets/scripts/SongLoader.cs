@@ -9,6 +9,7 @@ public class SongLoader : MonoBehaviour
     public AudioClip[] songs = new AudioClip[9];
     public GameObject background;
     public Sprite[] backgrounds = new Sprite[9];
+    private bool isPlaying = false;
 
     public ChartLoader chartLoader;
 
@@ -25,10 +26,20 @@ public class SongLoader : MonoBehaviour
         spriteRenderer.sprite = backgrounds[chartLoader.songIndex];
     }
 
+    private void FixedUpdate()
+    {
+        if (isPlaying && !audio.isPlaying)
+        {
+            SongEnd.SongFinished();
+            isPlaying = false;
+        }
+    }
+
     private IEnumerator WaitBeforePlay()
     {
-        yield return new WaitForSeconds(ChartLoader.playDelay + ChartLoader.songOffset);
+        yield return new WaitForSeconds(ChartLoader.playDelay + (ChartLoader.songOffset/1000));
 
         audio.Play();
+        isPlaying = true;
     }
 }

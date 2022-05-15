@@ -6,7 +6,7 @@ public class tempBoundController : MonoBehaviour
 {
 
     private Transform tf;
-    private static int misses = 0;
+    public static int misses = 0;
     [SerializeField] private bool lNote = false;
     [SerializeField] private bool lTNote = false;
 
