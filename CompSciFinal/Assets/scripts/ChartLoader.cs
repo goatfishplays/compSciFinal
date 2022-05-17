@@ -7,7 +7,6 @@ public class ChartLoader : MonoBehaviour
 {
     public int songIndex;
     public int diffIndex;
-    Triggering triggering;
     public GameObject clickManager;
     public GameObject note0Prefab;
     public GameObject lNote0Prefab;
@@ -30,7 +29,6 @@ public class ChartLoader : MonoBehaviour
 
     private void Awake()
     {
-        triggering = clickManager.GetComponent<Triggering>();
         LoadFile();
         
     }
@@ -131,7 +129,7 @@ public class ChartLoader : MonoBehaviour
     {
         int column = note.Column;
         float time = note.Time;
-        float fallSpeed = triggering.fallSpeed;
+        float fallSpeed = Triggering.fallSpeed;
 
         float y = fallSpeed * time / 1000 + fallSpeed*playDelay;
 
@@ -193,7 +191,7 @@ public class ChartLoader : MonoBehaviour
         int column = longNote.Column;
         float startTime = longNote.StartTime;
         float endTime = longNote.EndTime;
-        float fallSpeed = triggering.fallSpeed;
+        float fallSpeed = Triggering.fallSpeed;
 
         float yStart = fallSpeed * startTime / 1000 + fallSpeed * playDelay;
         float yEnd = fallSpeed * endTime / 1000 + fallSpeed * playDelay;

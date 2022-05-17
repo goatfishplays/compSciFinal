@@ -6,11 +6,9 @@ using UnityEngine.InputSystem;
 public class Triggering : MonoBehaviour
 {
     private Inputs inputs;
-    [SerializeField] public float fallSpeed = 5f;
+    public static float fallSpeed = 5f;
     [SerializeField] private Color offColor = new Color(64, 128, 64);
     [SerializeField] private Color onColor = new Color(64, 255, 64);
-
-
 
 
     [SerializeField] private Collider2D k1Cd;
