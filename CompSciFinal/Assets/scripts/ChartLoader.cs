@@ -5,7 +5,7 @@ using OsuLoader;
 
 public class ChartLoader : MonoBehaviour
 {
-    public int songIndex;
+    public int songIndex = SelectionManager.songIndex;
     public int diffIndex;
     public GameObject clickManager;
     public GameObject note0Prefab;
