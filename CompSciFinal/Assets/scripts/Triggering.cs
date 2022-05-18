@@ -7,8 +7,6 @@ public class Triggering : MonoBehaviour
 {
     private Inputs inputs;
     public static float fallSpeed = 5f;
-    [SerializeField] private Color offColor = new Color(64, 128, 64);
-    [SerializeField] private Color onColor = new Color(64, 255, 64);
 
 
     [SerializeField] private Collider2D k1Cd;
@@ -64,12 +62,12 @@ public class Triggering : MonoBehaviour
         if (inputs.buttonThings.Key1.ReadValue<float>() != 0)
         {
             k1 = true;
-            sR1.color = onColor;
+            sR1.color = OptionsManager.kd1Image.color;
         }
         else
         {
             k1 = false;
-            sR1.color = offColor;
+            sR1.color = OptionsManager.k1Image.color;
         }
         if (k1 && !lastK1)
         {
@@ -167,12 +165,12 @@ public class Triggering : MonoBehaviour
         if (inputs.buttonThings.Key2.ReadValue<float>() != 0)
         {
             k2 = true;
-            sR2.color = onColor;
+            sR2.color = OptionsManager.kd2Image.color;
         }
         else
         {
             k2 = false;
-            sR2.color = offColor;
+            sR2.color = OptionsManager.k2Image.color;
         }
         if (k2 && !lastK2)
         {
@@ -271,12 +269,12 @@ public class Triggering : MonoBehaviour
         if (inputs.buttonThings.Key3.ReadValue<float>() != 0)
         {
             k3 = true;
-            sR3.color = onColor;
+            sR3.color = OptionsManager.kd3Image.color;
         }
         else
         {
             k3 = false;
-            sR3.color = offColor;
+            sR3.color = OptionsManager.k3Image.color;
         }
         if (k3 && !lastK3)
         {
@@ -375,12 +373,12 @@ public class Triggering : MonoBehaviour
         if (inputs.buttonThings.Key4.ReadValue<float>() != 0)
         {
             k4 = true;
-            sR4.color = onColor;
+            sR4.color = OptionsManager.kd4Image.color;
         }
         else
         {
             k4 = false;
-            sR4.color = offColor;
+            sR4.color = OptionsManager.k4Image.color;
         }
         if (k4 && !lastK4)
         {

@@ -140,6 +140,7 @@ public class ChartLoader : MonoBehaviour
 
                 // GameObject n = Instantiate(note0Prefab, pos, Quaternion.Euler(0,0,0), transformParent) as GameObject;
                 GameObject n0 = Instantiate(note0Prefab) as GameObject;
+                n0.GetComponent<SpriteRenderer>().color = OptionsManager.n1Image.color;
                 n0.transform.parent = transformParent0;
                 Rigidbody2D rigidbody0 = n0.GetComponent<Rigidbody2D>();
 
@@ -152,6 +153,7 @@ public class ChartLoader : MonoBehaviour
 
                 // GameObject n = Instantiate(note0Prefab, pos, Quaternion.Euler(0,0,0), transformParent) as GameObject;
                 GameObject n1 = Instantiate(note1Prefab) as GameObject;
+                n1.GetComponent<SpriteRenderer>().color = OptionsManager.n2Image.color;
                 n1.transform.parent = transformParent1;
                 Rigidbody2D rigidbody1 = n1.GetComponent<Rigidbody2D>();
 
@@ -164,6 +166,7 @@ public class ChartLoader : MonoBehaviour
 
                 // GameObject n = Instantiate(note0Prefab, pos, Quaternion.Euler(0,0,0), transformParent) as GameObject;
                 GameObject n2 = Instantiate(note2Prefab) as GameObject;
+                n2.GetComponent<SpriteRenderer>().color = OptionsManager.n3Image.color;
                 n2.transform.parent = transformParent2;
                 Rigidbody2D rigidbody2 = n2.GetComponent<Rigidbody2D>();
 
@@ -176,6 +179,7 @@ public class ChartLoader : MonoBehaviour
 
                 // GameObject n = Instantiate(note0Prefab, pos, Quaternion.Euler(0,0,0), transformParent) as GameObject;
                 GameObject n3 = Instantiate(note3Prefab) as GameObject;
+                n3.GetComponent<SpriteRenderer>().color = OptionsManager.n4Image.color;
                 n3.transform.parent = transformParent3;
                 Rigidbody2D rigidbody3 = n3.GetComponent<Rigidbody2D>();
 
@@ -207,6 +211,9 @@ public class ChartLoader : MonoBehaviour
                 lN0.transform.parent = transformParent0;
                 Rigidbody2D rigidbody0 = lN0.GetComponent<Rigidbody2D>();
 
+                lN0.GetComponent<SpriteRenderer>().color = OptionsManager.n1Image.color;
+
+
                 lN0.transform.localScale = new Vector3(1, 1, 1);
                 lN0.transform.localPosition = new Vector2(0, yStart);
                 // transformChild0.localPosition = new Vector2(0, yEnd);
@@ -220,6 +227,9 @@ public class ChartLoader : MonoBehaviour
                 GameObject lN1 = Instantiate(lNote1Prefab) as GameObject;
                 lN1.transform.parent = transformParent1;
                 Rigidbody2D rigidbody1 = lN1.GetComponent<Rigidbody2D>();
+
+
+                lN1.GetComponent<SpriteRenderer>().color = OptionsManager.n2Image.color;
 
                 lN1.transform.localScale = new Vector3(1, 1, 1);
                 lN1.transform.localPosition = new Vector2(0, yStart);
@@ -235,6 +245,10 @@ public class ChartLoader : MonoBehaviour
                 lN2.transform.parent = transformParent2;
                 Rigidbody2D rigidbody2 = lN2.GetComponent<Rigidbody2D>();
 
+
+
+                lN2.GetComponent<SpriteRenderer>().color = OptionsManager.n3Image.color;
+
                 lN2.transform.localScale = new Vector3(1, 1, 1);
                 lN2.transform.localPosition = new Vector2(0, yStart);
                 // transformChild0.localPosition = new Vector2(0, yEnd);
@@ -248,6 +262,9 @@ public class ChartLoader : MonoBehaviour
                 GameObject lN3 = Instantiate(lNote0Prefab) as GameObject;
                 lN3.transform.parent = transformParent3;
                 Rigidbody2D rigidbody3 = lN3.GetComponent<Rigidbody2D>();
+
+                lN3.GetComponent<SpriteRenderer>().color = OptionsManager.n4Image.color;
+
 
                 lN3.transform.localScale = new Vector3(1, 1, 1);
                 lN3.transform.localPosition = new Vector2(0, yStart);

@@ -12,42 +12,26 @@ public class OptionsManager : MonoBehaviour
     [SerializeField] private Slider green;
     [SerializeField] private Slider blue;
     [SerializeField] private Slider alpha;
-    public Image k1Image;
-    public Image k2Image;
-    public Image k3Image;
-    public Image k4Image;
-    public Image kd1Image;
-    public Image kd2Image;
-    public Image kd3Image;
-    public Image kd4Image;
-    public Image n1Image;
-    public Image n2Image;
-    public Image n3Image;
-    public Image n4Image;
-    public Image l1Image;
-    public Image l2Image;
-    public Image l3Image;
-    public Image l4Image;
-    public Image ln1Image;
-    public Image ln2Image;
-    public Image ln3Image;
-    public Image ln4Image;
-    public Color32 k1Color;
-    public Color32 k2Color;
-    public Color32 k3Color;
-    public Color32 k4Color;
-    public Color32 kd1Color;
-    public Color32 kd2Color;
-    public Color32 kd3Color;
-    public Color32 kd4Color;
-    public Color32 n1Color;
-    public Color32 n2Color;
-    public Color32 n3Color;
-    public Color32 n4Color;
-    public Color32 l1Color;
-    public Color32 l2Color;
-    public Color32 l3Color;
-    public Color32 l4Color;
+    public static Image k1Image;
+    public static Image k2Image;
+    public static Image k3Image;
+    public static Image k4Image;
+    public static Image kd1Image;
+    public static Image kd2Image;
+    public static Image kd3Image;
+    public static Image kd4Image;
+    public static Image n1Image;
+    public static Image n2Image;
+    public static Image n3Image;
+    public static Image n4Image;
+    public static Image l1Image;
+    public static Image l2Image;
+    public static Image l3Image;
+    public static Image l4Image;
+    public static Image ln1Image;
+    public static Image ln2Image;
+    public static Image ln3Image;
+    public static Image ln4Image;
 
 
     private Image curImage;
@@ -64,6 +48,10 @@ public class OptionsManager : MonoBehaviour
         green.value = curCol.g;
         blue.value = curCol.b;
         alpha.value = curCol.a;
+        red.transform.GetChild(3).GetComponent<InputField>().text = red.value.ToString();
+        green.transform.GetChild(3).GetComponent<InputField>().text = green.value.ToString();
+        blue.transform.GetChild(3).GetComponent<InputField>().text = blue.value.ToString();
+        alpha.transform.GetChild(3).GetComponent<InputField>().text = alpha.value.ToString();
     }
 
     public void colorChange(Slider s)
@@ -110,6 +98,7 @@ public class OptionsManager : MonoBehaviour
         green.transform.GetChild(3).GetChild(1).GetComponent<Text>().text = green.value.ToString();
         blue.transform.GetChild(3).GetChild(1).GetComponent<Text>().text = blue.value.ToString();
         alpha.transform.GetChild(3).GetChild(1).GetComponent<Text>().text = alpha.value.ToString();
+        s.transform.GetChild(3).GetComponent<InputField>().text = s.value.ToString();
     }
 
     public void colorChange2(InputField iF)
@@ -184,38 +173,36 @@ public class OptionsManager : MonoBehaviour
 
     public void sdInChanged()
     {
-        ChartLoader.playDelay = float.Parse(sdIn.text.ToString());
+        ChartLoader.playDelay = float.Parse(sdIn.text.ToString());/*
+        SceneManager.LoadScene("Game");*/
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         fsIn.transform.GetChild(0).GetComponent<Text>().text = Triggering.fallSpeed.ToString();
         sdIn.transform.GetChild(0).GetComponent<Text>().text = ChartLoader.playDelay.ToString();
-        k1Color = k1Image.color;
-        k2Color = k2Image.color;
-        k3Color = k3Image.color;
-        k4Color = k4Image.color;
-        kd1Color = kd1Image.color;
-        kd2Color = kd2Image.color;
-        kd3Color = kd3Image.color;
-        kd4Color = kd4Image.color;
-        n1Color = n1Image.color;
-        n2Color = n2Image.color;
-        n3Color = n3Image.color;
-        n4Color = n4Image.color;
-        l1Color = l1Image.color;
-        l2Color = l2Image.color;
-        l3Color = l3Image.color;
-        l4Color = l4Image.color;
-        ln1Image.color = l1Color;
-        ln2Image.color = l2Color;
-        ln3Image.color = l3Color;
-        ln4Image.color = l4Color;
-
+        k1Image = transform.GetChild(2).GetComponent<Image>();
+        k2Image = transform.GetChild(3).GetComponent<Image>();
+        k3Image = transform.GetChild(4).GetComponent<Image>();
+        k4Image = transform.GetChild(5).GetComponent<Image>();
+        kd1Image = transform.GetChild(6).GetComponent<Image>();
+        kd2Image = transform.GetChild(7).GetComponent<Image>();
+        kd3Image = transform.GetChild(8).GetComponent<Image>();
+        kd4Image = transform.GetChild(9).GetComponent<Image>();
+        n1Image = transform.GetChild(10).GetComponent<Image>();
+        n2Image = transform.GetChild(11).GetComponent<Image>();
+        n3Image = transform.GetChild(12).GetComponent<Image>();
+        n4Image = transform.GetChild(13).GetComponent<Image>();
+        l1Image = transform.GetChild(14).GetComponent<Image>();
+        l2Image = transform.GetChild(15).GetComponent<Image>();
+        l3Image = transform.GetChild(16).GetComponent<Image>();
+        l4Image = transform.GetChild(17).GetComponent<Image>();
         curImInd = 2;
+        Debug.Log(k1Image);
         curImage = k1Image;
-        curCol = k1Color;
+        Debug.Log(curImage);
+        curCol = k1Image.color;
         red.value = curCol.r;
         green.value = curCol.g;
         blue.value = curCol.b;
