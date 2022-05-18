@@ -7,7 +7,6 @@ public class SelectCover : MonoBehaviour
 {
     public Canvas selectedCanvas;
     public Canvas unselectedCanvas;
-    private bool isSelected = false;
     Button button;
     Vector3 originalPos;
     Vector3 originalScale;
@@ -25,7 +24,6 @@ public class SelectCover : MonoBehaviour
         transform.LeanScale(new Vector3(3, 3, 3),0.5f).setEaseOutQuart();
         transform.SetParent(selectedCanvas.transform);
         button.interactable = false;
-        isSelected = true;
     }
 
     public void CoverUnselected()
@@ -34,6 +32,5 @@ public class SelectCover : MonoBehaviour
         transform.LeanMoveLocal(originalPos, 0.5f).setEaseOutQuart();
         transform.LeanScale(originalScale, 0.5f).setEaseOutQuart();
         button.interactable = true;
-        isSelected = false;
     }
 }

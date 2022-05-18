@@ -785,6 +785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c82f574a495a04f93968d193ecf55f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected: {fileID: 272196984}
 --- !u!114 &1086088040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -831,7 +832,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1086088039}
         m_TargetAssemblyTypeName: ButtonAnims, Assembly-CSharp
-        m_MethodName: ButtonHide
+        m_MethodName: BackButtonHide
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1101,7 +1102,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1086088039}
         m_TargetAssemblyTypeName: ButtonAnims, Assembly-CSharp
-        m_MethodName: ButtonShow
+        m_MethodName: BackButtonShow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1335,7 +1336,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1086088039}
         m_TargetAssemblyTypeName: ButtonAnims, Assembly-CSharp
-        m_MethodName: ButtonShow
+        m_MethodName: BackButtonShow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
