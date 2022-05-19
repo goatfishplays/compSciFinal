@@ -32,6 +32,10 @@ public class OptionsManager : MonoBehaviour
     public static Image ln2Image;
     public static Image ln3Image;
     public static Image ln4Image;
+    public static Color kDefCol = new Color32(64, 64, 128, 255);
+    public static Color kdDefCol = new Color32(128, 128, 255, 255);
+    public static Color nDefCol = new Color32(255, 255, 255, 255);
+    public static Color lnDefCol = new Color32(255, 255, 255, 255);
 
 
     private Image curImage;
@@ -61,7 +65,7 @@ public class OptionsManager : MonoBehaviour
             case 18:
                 curCol.r = (byte)s.value;
                 curImage.color = curCol;
-                if(curImage.transform.childCount > 0)
+                if (curImage.transform.childCount > 0)
                 {
                     curImage.transform.GetChild(0).GetComponent<Image>().color = curCol;
                 }
@@ -103,7 +107,7 @@ public class OptionsManager : MonoBehaviour
 
     public void colorChange2(InputField iF)
     {
-        if(iF.text.Equals(""))
+        if (iF.text.Equals(""))
         {
             iF.text = 0.ToString();
             return;
@@ -114,13 +118,13 @@ public class OptionsManager : MonoBehaviour
             val = 0;
             iF.text = 0.ToString();
         }
-        else if(val > 255)
+        else if (val > 255)
         {
             val = 255;
             iF.text = 255.ToString();
         }
         iF.transform.parent.GetComponent<Slider>().value = val;
-        switch(iF.transform.parent.GetSiblingIndex())
+        switch (iF.transform.parent.GetSiblingIndex())
         {
             case 18:
                 curCol.r = byte.Parse(iF.text.ToString());
@@ -163,7 +167,7 @@ public class OptionsManager : MonoBehaviour
     public void fsInChanged()
     {
         float fs = float.Parse(fsIn.text.ToString());
-        if(fs <= 0)
+        if (fs <= 0)
         {
             fs = 0.001f;
             fsIn.text = fs.ToString();
@@ -198,6 +202,23 @@ public class OptionsManager : MonoBehaviour
         l2Image = transform.GetChild(15).GetComponent<Image>();
         l3Image = transform.GetChild(16).GetComponent<Image>();
         l4Image = transform.GetChild(17).GetComponent<Image>();
+
+        k1Image.color = kDefCol;
+        k2Image.color = kDefCol;
+        k3Image.color = kDefCol;
+        k4Image.color = kDefCol;
+        kd1Image.color = kdDefCol;
+        kd2Image.color = kdDefCol;
+        kd3Image.color = kdDefCol;
+        kd4Image.color = kdDefCol;
+        n1Image.color = nDefCol;
+        n2Image.color = nDefCol;
+        n3Image.color = nDefCol;
+        n4Image.color = nDefCol;
+        l1Image.color = lnDefCol;
+        l2Image.color = lnDefCol;
+        l3Image.color = lnDefCol;
+        l4Image.color = lnDefCol;
         curImInd = 2;
         Debug.Log(k1Image);
         curImage = k1Image;

@@ -5,8 +5,8 @@ using OsuLoader;
 
 public class ChartLoader : MonoBehaviour
 {
-    public static int songIndex = SelectionManager.songIndex;
-    public static int diffIndex = SelectionManager.diffIndex;
+    private int songIndex = SelectionManager.songIndex;
+    private int diffIndex = SelectionManager.diffIndex;
     public GameObject clickManager;
     public GameObject note0Prefab;
     public GameObject lNote0Prefab;
@@ -22,7 +22,7 @@ public class ChartLoader : MonoBehaviour
     public GameObject note3Parent;
     private BeatMap beatMap;
 
-    public static float playDelay = 2f;
+    public static float playDelay = 3f;
     public static float songOffset;
 
     private void Awake()
@@ -38,7 +38,8 @@ public class ChartLoader : MonoBehaviour
         testNote.Column = 0;
         testNote.Time = 1000;
         SpawnNote(testNote);*/
-
+        songIndex = SelectionManager.songIndex;
+        diffIndex = SelectionManager.diffIndex;
         foreach (Note note in beatMap.SingleNotes)
         {
             SpawnSingleNote(note);
@@ -103,7 +104,7 @@ public class ChartLoader : MonoBehaviour
         }
 
         // DEBUG - prints difficulty names and single note count
-        
+
         for (int i = 0; i < difficulties.Length; i++)
         {
             Debug.Log(difficulties[i]);
@@ -117,7 +118,7 @@ public class ChartLoader : MonoBehaviour
             //songOffset = beatMap.AudioLeadIn;
         }
 
-        
+
         Debug.Log(beatMap.SingleNotes.Count);
         Debug.Log(files[diffIndex]);
         Debug.Log(beatMap.LongNotes[0].Column);
@@ -129,7 +130,7 @@ public class ChartLoader : MonoBehaviour
         float time = note.Time;
         float fallSpeed = Triggering.fallSpeed;
 
-        float y = fallSpeed * time / 1000 + fallSpeed*playDelay;
+        float y = fallSpeed * time / 1000 + fallSpeed * playDelay;
 
         switch (column)
         {
@@ -142,7 +143,7 @@ public class ChartLoader : MonoBehaviour
                 n0.transform.parent = transformParent0;
                 Rigidbody2D rigidbody0 = n0.GetComponent<Rigidbody2D>();
 
-                n0.transform.localScale = new Vector3(1,1,1);
+                n0.transform.localScale = new Vector3(1, 1, 1);
                 n0.transform.localPosition = new Vector2(0, y);
                 rigidbody0.velocity = new Vector2(0, -fallSpeed);
                 break;
@@ -188,7 +189,7 @@ public class ChartLoader : MonoBehaviour
         }
     }
 
-    private void SpawnLongNote (LongNote longNote)
+    private void SpawnLongNote(LongNote longNote)
     {
         int column = longNote.Column;
         float startTime = longNote.StartTime;

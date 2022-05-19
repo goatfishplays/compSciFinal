@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class Triggering : MonoBehaviour
 {
     private Inputs inputs;
-    public static float fallSpeed = 5f;
+    public static float fallSpeed = 12f;
 
 
     [SerializeField] private Collider2D k1Cd;
