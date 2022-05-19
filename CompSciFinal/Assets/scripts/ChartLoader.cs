@@ -5,12 +5,11 @@ using OsuLoader;
 
 public class ChartLoader : MonoBehaviour
 {
-    public int songIndex = SelectionManager.songIndex;
-    public int diffIndex;
+    public static int songIndex = SelectionManager.songIndex;
+    public static int diffIndex = SelectionManager.diffIndex;
     public GameObject clickManager;
     public GameObject note0Prefab;
     public GameObject lNote0Prefab;
-    public GameObject lNote0End;
     public GameObject note0Parent;
     public GameObject note1Prefab;
     public GameObject lNote1Prefab;
@@ -22,15 +21,14 @@ public class ChartLoader : MonoBehaviour
     public GameObject lNote3Prefab;
     public GameObject note3Parent;
     private BeatMap beatMap;
-    private int tick = 0;
 
-    public static float playDelay = 3f;
+    public static float playDelay = 2f;
     public static float songOffset;
 
     private void Awake()
     {
         LoadFile();
-        
+        Debug.Log(diffIndex);
     }
 
     // Start is called before the first frame update
@@ -54,7 +52,7 @@ public class ChartLoader : MonoBehaviour
     public void LoadFile()
     {
         string song = "";
-        switch (songIndex)
+        switch (SelectionManager.songIndex)
         {
             case 0:
                 song = "306191 Masayoshi Minoshima ft nomico - Bad apple";
@@ -116,7 +114,7 @@ public class ChartLoader : MonoBehaviour
         if (diffIndex <= difficulties.Length)
         {
             beatMap = bms[diffIndex];
-            songOffset = beatMap.AudioLeadIn;
+            //songOffset = beatMap.AudioLeadIn;
         }
 
         

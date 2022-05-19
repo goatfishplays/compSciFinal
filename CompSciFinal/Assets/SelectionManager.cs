@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SelectionManager : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class SelectionManager : MonoBehaviour
     public GameObject villainVirusCover;
 
     public static int songIndex;
+    public static int diffIndex;
 
     public void GetSongIndex()
     {
@@ -63,5 +65,16 @@ public class SelectionManager : MonoBehaviour
         }
 
         Debug.Log(songIndex.ToString());
+    }
+
+    public void setDiffIndex(int i)
+    {
+        diffIndex = i;
+        Debug.Log(diffIndex);
+    }
+
+    public void playMap()
+    {
+        SceneManager.LoadScene("Game");
     }
 }

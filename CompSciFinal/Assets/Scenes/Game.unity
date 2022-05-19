@@ -152,12 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7575d4be1bc66124cbf274b04ae5a80b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  songIndex: 5
-  diffIndex: 1
   clickManager: {fileID: 2108383908}
   note0Prefab: {fileID: 1545590242162979690, guid: 8cbc546d95bf3984da7887c7abdd30ad, type: 3}
   lNote0Prefab: {fileID: 8009879681091806361, guid: d9bcf7d7f8fee5440b0fc5afcc499bbb, type: 3}
-  lNote0End: {fileID: 0}
   note0Parent: {fileID: 1838430060}
   note1Prefab: {fileID: 4412432876986414157, guid: 5010ee412cb115649bc2699704ecf4a6, type: 3}
   lNote1Prefab: {fileID: 2075647610392853043, guid: b3de2cca6bd2eeb49818a5777c3e5ea3, type: 3}
@@ -1146,9 +1143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e10a9adb695ca4a4a986a5bb35837290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 14
-  offColor: {r: 0.2509804, g: 0.2509804, b: 0.5019608, a: 1}
-  onColor: {r: 0.5019608, g: 0.5019608, b: 1, a: 1}
   k1Cd: {fileID: 1838430061}
   sR1: {fileID: 1838430063}
   note0: {fileID: 1545590242162979690, guid: 8cbc546d95bf3984da7887c7abdd30ad, type: 3}

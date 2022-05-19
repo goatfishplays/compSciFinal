@@ -173,7 +173,7 @@ public class OptionsManager : MonoBehaviour
 
     public void sdInChanged()
     {
-        ChartLoader.playDelay = float.Parse(sdIn.text.ToString());/*
+        ChartLoader.songOffset = float.Parse(sdIn.text.ToString());/*
         SceneManager.LoadScene("Game");*/
     }
 
