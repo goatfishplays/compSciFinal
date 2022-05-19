@@ -23,7 +23,7 @@ public class ChartLoader : MonoBehaviour
     private BeatMap beatMap;
 
     public static float playDelay = 3f;
-    public static float songOffset;
+    public static float songOffset = 0f;
 
     private void Awake()
     {

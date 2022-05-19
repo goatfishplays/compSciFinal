@@ -185,7 +185,7 @@ public class OptionsManager : MonoBehaviour
     void Awake()
     {
         fsIn.transform.GetChild(0).GetComponent<Text>().text = Triggering.fallSpeed.ToString();
-        sdIn.transform.GetChild(0).GetComponent<Text>().text = ChartLoader.playDelay.ToString();
+        sdIn.transform.GetChild(0).GetComponent<Text>().text = ChartLoader.songOffset.ToString();
         k1Image = transform.GetChild(2).GetComponent<Image>();
         k2Image = transform.GetChild(3).GetComponent<Image>();
         k3Image = transform.GetChild(4).GetComponent<Image>();

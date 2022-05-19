@@ -16,6 +16,8 @@ public class SelectionManager : MonoBehaviour
     public GameObject scatteredFaithCover;
     public GameObject villainVirusCover;
 
+    public bool isDiffSelected = false;
+
     public static int songIndex;
     public static int diffIndex;
 
@@ -71,6 +73,11 @@ public class SelectionManager : MonoBehaviour
     {
         diffIndex = i;
         Debug.Log(diffIndex);
+    }
+
+    public void setdiffSelected(bool b)
+    {
+        isDiffSelected = b;
     }
 
     public void playMap()
