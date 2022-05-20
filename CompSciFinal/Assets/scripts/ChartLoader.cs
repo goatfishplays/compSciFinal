@@ -28,6 +28,10 @@ public class ChartLoader : MonoBehaviour
 
     private void Awake()
     {
+        Triggering.score = 0;
+        Triggering.fullScore = 0;
+        Triggering.combo = 0;
+        tempBoundController.misses = 0;
         LoadFile();
         Debug.Log(diffIndex);
     }
