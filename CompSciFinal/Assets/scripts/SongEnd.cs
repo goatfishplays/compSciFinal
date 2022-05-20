@@ -5,8 +5,5 @@ using UnityEngine.SceneManagement;
 
 public class SongEnd : MonoBehaviour
 {
-    public static void SongFinished()
-    {
-        SceneManager.LoadScene("End Screen");
-    }
+    
 }

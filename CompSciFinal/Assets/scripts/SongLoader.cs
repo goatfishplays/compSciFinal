@@ -30,9 +30,16 @@ public class SongLoader : MonoBehaviour
     {
         if (isPlaying && !audio.isPlaying)
         {
-            SongEnd.SongFinished();
+            SongFinished();
             isPlaying = false;
         }
+    }
+
+    public LevelLoader levelLoader;
+
+    public void SongFinished()
+    {
+        levelLoader.ChangeScene(3);
     }
 
     private IEnumerator WaitBeforePlay()

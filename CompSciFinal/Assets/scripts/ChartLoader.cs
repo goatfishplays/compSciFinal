@@ -23,6 +23,7 @@ public class ChartLoader : MonoBehaviour
     private BeatMap beatMap;
 
     public static float playDelay = 3f;
+    private float noteOffset = 0.55f;
     public static float songOffset = 0f;
 
     private void Awake()
@@ -130,7 +131,7 @@ public class ChartLoader : MonoBehaviour
         float time = note.Time;
         float fallSpeed = Triggering.fallSpeed;
 
-        float y = fallSpeed * time / 1000 + fallSpeed * playDelay;
+        float y = fallSpeed * time / 1000 + fallSpeed * playDelay + fallSpeed * noteOffset;
 
         switch (column)
         {
@@ -196,8 +197,8 @@ public class ChartLoader : MonoBehaviour
         float endTime = longNote.EndTime;
         float fallSpeed = Triggering.fallSpeed;
 
-        float yStart = fallSpeed * startTime / 1000 + fallSpeed * playDelay;
-        float yEnd = fallSpeed * endTime / 1000 + fallSpeed * playDelay;
+        float yStart = fallSpeed * startTime / 1000 + fallSpeed * playDelay + fallSpeed * noteOffset;
+        float yEnd = fallSpeed * endTime / 1000 + fallSpeed * playDelay + fallSpeed * noteOffset;
         float yRealEnd = yEnd - yStart;
 
         switch (column)
