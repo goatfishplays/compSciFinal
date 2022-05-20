@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SelectionManager : MonoBehaviour
 {
@@ -15,8 +16,10 @@ public class SelectionManager : MonoBehaviour
     public GameObject pumpinJunkiesCover;
     public GameObject scatteredFaithCover;
     public GameObject villainVirusCover;
+    public Transform playTransform;
 
     public bool isDiffSelected = false;
+    public bool isPlayButtonShown = false;
 
     public static int songIndex;
     public static int diffIndex;
@@ -80,6 +83,25 @@ public class SelectionManager : MonoBehaviour
         isDiffSelected = b;
     }
 
+    public void showPlayButton()
+    {
+        if (!isPlayButtonShown && isDiffSelected)
+        {
+            playTransform.LeanMoveLocal(new Vector2(0, -380), 0.5f).setEaseOutQuart();
+            isPlayButtonShown = true;
+        }
+    }
+
+    public void hidePlayButton()
+    {
+        playTransform.LeanMoveLocal(new Vector2(0, -640), 0.5f).setEaseOutQuart();
+        isPlayButtonShown = false;
+    }
+
+    public void toMainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
     public void playMap()
     {
         SceneManager.LoadScene("Game");
